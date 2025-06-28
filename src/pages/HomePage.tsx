@@ -208,7 +208,7 @@ const HomePage = () => {
         </div>
         
         {/* Dynamic Stats */}
-        <div className="container mx-auto px-4 mt-16">
+        {/* <div className="container mx-auto px-4 mt-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <motion.div 
               className="bg-white/10 backdrop-blur-sm p-6 rounded-lg"
@@ -275,7 +275,7 @@ const HomePage = () => {
               <p className="text-gray-300">Team Members</p>
             </motion.div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Services Section */}
