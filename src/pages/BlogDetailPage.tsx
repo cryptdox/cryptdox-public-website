@@ -82,23 +82,23 @@ const BlogDetailPage = () => {
     description: post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 160) : '',
     publishedTime: post.created_at,
     modifiedTime: post.created_at,
-    author: 'AbDox Team',
-    url: `https://abdox.com/blog/${post.id}`,
+    author: 'CryptDox Team',
+    url: `https://cryptdox.com/blog/${post.id}`,
     image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2'
   };
 
   return (
     <div>
       <SEOHead 
-        title={`${post.title} | AbDox Blog`}
-        description={post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 160) : 'Read the latest insights and updates from AbDox technology experts.'}
+        title={`${post.title} | CryptDox Blog`}
+        description={post.content ? post.content.replace(/<[^>]*>/g, '').substring(0, 160) : 'Read the latest insights and updates from CryptDox technology experts.'}
         keywords="technology blog, software development, AI insights, programming tutorials, tech industry"
-        url={`https://abdox.com/blog/${post.id}`}
+        url={`https://cryptdox.com/blog/${post.id}`}
         image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
         type="article"
         publishedTime={post.created_at}
         modifiedTime={post.created_at}
-        author="AbDox Team"
+        author="CryptDox Team"
         section="Technology"
       />
 
@@ -139,7 +139,7 @@ const BlogDetailPage = () => {
                   </div>
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-2" />
-                    <span>AbDox Team</span>
+                    <span>CryptDox Team</span>
                   </div>
                 </div>
               </header>

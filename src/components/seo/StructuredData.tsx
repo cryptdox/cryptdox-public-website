@@ -16,8 +16,8 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "description": data.description,
           "provider": {
             "@type": "Organization",
-            "name": "AbDox",
-            "url": "https://abdox.com"
+            "name": "CryptDox",
+            "url": "https://cryptdox.com"
           },
           "serviceType": data.serviceType || "Technology Service",
           "areaServed": "Worldwide",
@@ -45,11 +45,11 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "url": data.url,
           "brand": {
             "@type": "Brand",
-            "name": "AbDox"
+            "name": "CryptDox"
           },
           "manufacturer": {
             "@type": "Organization",
-            "name": "AbDox"
+            "name": "CryptDox"
           },
           "offers": {
             "@type": "Offer",
@@ -58,7 +58,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "availability": "https://schema.org/InStock",
             "seller": {
               "@type": "Organization",
-              "name": "AbDox"
+              "name": "CryptDox"
             }
           }
         };
@@ -72,14 +72,14 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "image": data.image,
           "author": {
             "@type": "Person",
-            "name": data.author || "AbDox Team"
+            "name": data.author || "CryptDox Team"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "AbDox",
+            "name": "CryptDox",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://abdox.com/logo.png"
+              "url": "https://cryptdox.com/logo.png"
             }
           },
           "datePublished": data.publishedTime,
@@ -100,7 +100,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "jobTitle": data.jobTitle,
           "worksFor": {
             "@type": "Organization",
-            "name": "AbDox"
+            "name": "CryptDox"
           },
           "url": data.url,
           "sameAs": data.socialLinks || []
@@ -117,8 +117,8 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "employmentType": "FULL_TIME",
           "hiringOrganization": {
             "@type": "Organization",
-            "name": "AbDox",
-            "sameAs": "https://abdox.com"
+            "name": "CryptDox",
+            "sameAs": "https://cryptdox.com"
           },
           "jobLocation": {
             "@type": "Place",

@@ -24,7 +24,7 @@ const Breadcrumbs = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://abdox.com"
+        "item": "https://cryptdox.com"
       }
     ];
 
@@ -36,7 +36,7 @@ const Breadcrumbs = () => {
         "@type": "ListItem",
         "position": index + 2,
         "name": name,
-        "item": `https://abdox.com${routeTo}`
+        "item": `https://cryptdox.com${routeTo}`
       });
     });
 

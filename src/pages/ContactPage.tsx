@@ -54,20 +54,20 @@ const ContactPage = () => {
   };
 
   const contactData = {
-    name: "AbDox Contact",
-    description: "Get in touch with AbDox for technology solutions and consulting services",
+    name: "CryptDox Contact",
+    description: "Get in touch with CryptDox for technology solutions and consulting services",
     address: "C-8 #54, Green Model Town, Dhaka",
     phone: "+88 01310 685450",
-    email: "info@abdox.com"
+    email: "info@cryptdox.com"
   };
 
   return (
     <div>
       <SEOHead 
-        title="Contact AbDox - Get in Touch for Technology Solutions"
-        description="Contact AbDox for custom software development, AI solutions, cloud infrastructure, and media production services. Get in touch with our expert team today."
-        keywords="contact abdox, software development consultation, technology services contact, get quote, business inquiry, custom software consultation"
-        url="https://abdox.com/contact"
+        title="Contact CryptDox - Get in Touch for Technology Solutions"
+        description="Contact CryptDox for custom software development, AI solutions, cloud infrastructure, and media production services. Get in touch with our expert team today."
+        keywords="contact cryptdox, software development consultation, technology services contact, get quote, business inquiry, custom software consultation"
+        url="https://cryptdox.com/contact"
         image="https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
       />
 
@@ -111,11 +111,11 @@ const ContactPage = () => {
                     <div>
                       <h2 className="text-lg font-semibold">Email Us</h2>
                       <a 
-                        href="mailto:info@abdox.com" 
+                        href="mailto:info@cryptdox.com" 
                         className="text-blue-600 hover:text-blue-800"
-                        aria-label="Send email to info@abdox.com"
+                        aria-label="Send email to info@cryptdox.com"
                       >
-                        info@abdox.com
+                        info@cryptdox.com
                       </a>
                     </div>
                   </div>
@@ -246,8 +246,8 @@ const ContactPage = () => {
                 height="450" 
                 style={{ border: 0 }} 
                 loading="lazy"
-                title="AbDox Office Location - C-8 #54, Green Model Town, Dhaka"
-                aria-label="Map showing AbDox office location"
+                title="CryptDox Office Location - C-8 #54, Green Model Town, Dhaka"
+                aria-label="Map showing CryptDox office location"
               ></iframe>
             </div>
           </div>

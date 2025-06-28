@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://abdox.com/sitemap.xml
+Sitemap: https://cryptdox.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

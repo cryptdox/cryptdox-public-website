@@ -13,7 +13,7 @@ const Logo = ({ inverted = false }: LogoProps) => {
     <Link to="/" className="flex items-center gap-2">
       <Terminal className={`h-8 w-8 ${accentColor}`} />
       <span className={`text-2xl font-bold ${textColor}`}>
-        Ab<span className={accentColor}>Dox</span>
+        Crypt<span className={accentColor}>Dox</span>
       </span>
     </Link>
   );

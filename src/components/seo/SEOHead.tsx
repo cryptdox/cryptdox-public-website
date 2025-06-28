@@ -17,31 +17,31 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({
-  title = 'AbDox - Software Development, Media Production & AI Solutions',
-  description = 'AbDox specializes in custom software development, cloud infrastructure, media production, and AI-powered solutions. Transform your business with cutting-edge technology.',
+  title = 'CryptDox - Software Development, Media Production & AI Solutions',
+  description = 'CryptDox specializes in custom software development, cloud infrastructure, media production, and AI-powered solutions. Transform your business with cutting-edge technology.',
   keywords = 'software development, web development, mobile apps, cloud infrastructure, AI solutions, media production, custom software, technology consulting, digital transformation',
   image = 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
-  url = 'https://abdox.com',
+  url = 'https://cryptdox.com',
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = 'AbDox Team',
+  author = 'CryptDox Team',
   section,
   tags = [],
   noIndex = false,
   canonicalUrl
 }: SEOHeadProps) => {
-  const fullTitle = title.includes('AbDox') ? title : `${title} | AbDox`;
+  const fullTitle = title.includes('CryptDox') ? title : `${title} | CryptDox`;
   const currentUrl = canonicalUrl || url;
 
   // Generate structured data
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "AbDox",
+    "name": "CryptDox",
     "description": "Technology company specializing in software development, media production, and AI solutions",
-    "url": "https://abdox.com",
-    "logo": "https://abdox.com/logo.png",
+    "url": "https://cryptdox.com",
+    "logo": "https://cryptdox.com/logo.png",
     "foundingDate": "2016",
     "founder": {
       "@type": "Person",
@@ -57,12 +57,12 @@ const SEOHead = ({
       "@type": "ContactPoint",
       "telephone": "+88-01310-685450",
       "contactType": "customer service",
-      "email": "info@abdox.com"
+      "email": "info@cryptdox.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/abdox",
-      "https://github.com/abdox",
-      "https://twitter.com/abdox"
+      "https://linkedin.com/company/cryptdox",
+      "https://github.com/cryptdox",
+      "https://twitter.com/cryptdox"
     ],
     "services": [
       "Custom Software Development",
@@ -75,16 +75,16 @@ const SEOHead = ({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "AbDox",
-    "url": "https://abdox.com",
+    "name": "CryptDox",
+    "url": "https://cryptdox.com",
     "description": description,
     "publisher": {
       "@type": "Organization",
-      "name": "AbDox"
+      "name": "CryptDox"
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://abdox.com/search?q={search_term_string}",
+      "target": "https://cryptdox.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -97,7 +97,7 @@ const SEOHead = ({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://abdox.com"
+        "item": "https://cryptdox.com"
       }
     ]
   };
@@ -124,7 +124,7 @@ const SEOHead = ({
       <meta property="og:image" content={image} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="AbDox" />
+      <meta property="og:site_name" content="CryptDox" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}
@@ -132,8 +132,8 @@ const SEOHead = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:site" content="@abdox" />
-      <meta name="twitter:creator" content="@abdox" />
+      <meta name="twitter:site" content="@cryptdox" />
+      <meta name="twitter:creator" content="@cryptdox" />
       
       {/* Article specific meta tags */}
       {type === 'article' && publishedTime && (

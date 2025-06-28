@@ -87,7 +87,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-500 mr-3" />
-                <a href="mailto:info@abdox.com" className="text-gray-400 hover:text-white transition-colors">info@abdox.com</a>
+                <a href="mailto:info@cryptdox.com" className="text-gray-400 hover:text-white transition-colors">info@cryptdox.com</a>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; {currentYear} AbDox. All rights reserved.
+            &copy; {currentYear} CryptDox. All rights reserved.
           </p>
         </div>
       </div>

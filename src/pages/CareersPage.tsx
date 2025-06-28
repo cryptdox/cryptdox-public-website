@@ -48,7 +48,7 @@ const CareersPage = () => {
   return (
     <div>
       <PageHeader 
-        title="Careers at AbDox" 
+        title="Careers at CryptDox" 
         subtitle="Join our innovative team" 
         bgImage="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
@@ -150,7 +150,7 @@ const CareersPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Join AbDox?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Join CryptDox?</h2>
               <p className="text-lg text-gray-600">
                 Be part of a forward-thinking team working on cutting-edge technologies
               </p>

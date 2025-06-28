@@ -202,7 +202,7 @@ const JobApplicationPage = () => {
                 
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">Application Submitted Successfully!</h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Thank you for applying for the {job?.title} position at AbDox. We will review your application and get back to you soon.
+                  Thank you for applying for the {job?.title} position at CryptDox. We will review your application and get back to you soon.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

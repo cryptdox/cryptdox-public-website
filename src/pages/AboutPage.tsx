@@ -43,11 +43,11 @@ const AboutPage = () => {
   }, []);
 
   const defaultValues: AboutInfo = {
-    title: 'About AbDox',
+    title: 'About CryptDox',
     founder_name: 'Abir Hosen Ashik',
     mission: 'To revolutionize digital solutions through innovation, excellence, and integrity.',
-    description: 'AbDox is a tech startup specializing in software development, media production, and AI-powered solutions. We help businesses leverage technology to grow and innovate in the digital age.',
-    story: 'AbDox was founded by Abir Hosen Ashik with a vision to create technology solutions that make a difference. The name "AbDox" combines "Abir" (the founder\'s name) with "Doxology" (an expression of praise), reflecting our commitment to creating praiseworthy digital solutions.',
+    description: 'CryptDox is a tech startup specializing in software development, media production, and AI-powered solutions. We help businesses leverage technology to grow and innovate in the digital age.',
+    story: 'CryptDox was founded by Abir Hosen Ashik with a vision to create technology solutions that make a difference. The name "CryptDox" combines "Abir" (the founder\'s name) with "Doxology" (an expression of praise), reflecting our commitment to creating praiseworthy digital solutions.',
     core_values: ['Innovation', 'Excellence', 'Integrity', 'Collaboration', 'Customer-Focus'],
     founder_image_url: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   };
@@ -55,7 +55,7 @@ const AboutPage = () => {
   const info = aboutInfo || defaultValues;
 
   const organizationData = {
-    name: "AbDox",
+    name: "CryptDox",
     description: info.description,
     founder: info.founder_name,
     mission: info.mission,
@@ -65,10 +65,10 @@ const AboutPage = () => {
   return (
     <div>
       <SEOHead 
-        title="About AbDox - Leading Software Development Company"
-        description="Learn about AbDox, a technology company founded by Abir Hosen Ashik, specializing in software development, media production, and AI solutions. Discover our mission, values, and story."
-        keywords="about abdox, software development company, abir hosen ashik, technology startup, ai solutions, media production, company history, mission values"
-        url="https://abdox.com/about"
+        title="About CryptDox - Leading Software Development Company"
+        description="Learn about CryptDox, a technology company founded by Abir Hosen Ashik, specializing in software development, media production, and AI solutions. Discover our mission, values, and story."
+        keywords="about cryptdox, software development company, abir hosen ashik, technology startup, ai solutions, media production, company history, mission values"
+        url="https://cryptdox.com/about"
         image="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
       />
 
@@ -167,7 +167,7 @@ const AboutPage = () => {
               >
                 <img 
                   src={isLoading ? 'https://via.placeholder.com/600x400' : (info.founder_image_url || defaultValues.founder_image_url)} 
-                  alt={`${info.founder_name || 'Founder'} - AbDox Founder and CEO`}
+                  alt={`${info.founder_name || 'Founder'} - CryptDox Founder and CEO`}
                   className="rounded-xl shadow-lg object-cover w-full aspect-[4/3]"
                   loading="lazy"
                 />
@@ -212,7 +212,7 @@ const AboutPage = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Values</h2>
               <p className="text-xl text-gray-600">
-                These principles guide everything we do at AbDox
+                These principles guide everything we do at CryptDox
               </p>
             </div>
             

@@ -42,7 +42,7 @@ const TeamPage = () => {
     <div>
       <PageHeader 
         title="Our Team" 
-        subtitle="Meet the talented individuals behind AbDox" 
+        subtitle="Meet the talented individuals behind CryptDox" 
         bgImage="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
 
