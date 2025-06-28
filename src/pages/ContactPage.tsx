@@ -115,7 +115,7 @@ const ContactPage = () => {
                         className="text-blue-600 hover:text-blue-800"
                         aria-label="Send email to info@cryptdox.com"
                       >
-                        info@cryptdox.com
+                        cryptdox.ethos@gmail.com
                       </a>
                     </div>
                   </div>

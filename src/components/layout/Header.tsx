@@ -52,11 +52,11 @@ const Header = () => {
             <NavLink to="/" className={navLinkClasses}>Home</NavLink>
             <NavLink to="/about" className={navLinkClasses}>About</NavLink>
             <NavLink to="/services" className={navLinkClasses}>Services</NavLink>
-            <NavLink to="/products" className={navLinkClasses}>Products</NavLink>
+            {/* <NavLink to="/products" className={navLinkClasses}>Products</NavLink>
             <NavLink to="/portfolio" className={navLinkClasses}>Portfolio</NavLink>
             <NavLink to="/team" className={navLinkClasses}>Team</NavLink>
             <NavLink to="/blog" className={navLinkClasses}>Blog</NavLink>
-            <NavLink to="/careers" className={navLinkClasses}>Careers</NavLink>
+            <NavLink to="/careers" className={navLinkClasses}>Careers</NavLink> */}
             <NavLink to="/contact" className={navLinkClasses}>
               <button className="px-5 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">
                 Contact Us
