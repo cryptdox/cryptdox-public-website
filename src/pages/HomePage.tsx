@@ -126,7 +126,7 @@ const HomePage = () => {
   }, []);
 
   const organizationData = {
-    name: "CryptDox",
+    name: "cryptdox",
     description: "Technology company specializing in software development, media production, and AI solutions",
     services: services.length > 0 ? services : [
       { name: "Custom Software Development", description: "Tailored applications designed to meet your specific business requirements" },
@@ -139,8 +139,8 @@ const HomePage = () => {
   return (
     <div>
       <SEOHead 
-        title="CryptDox - Leading Software Development & AI Solutions Company"
-        description="Transform your business with CryptDox's expert software development, cloud infrastructure, media production, and AI solutions. 50+ projects completed, 8+ years experience."
+        title="cryptdox - Leading Software Development & AI Solutions Company"
+        description="Transform your business with cryptdox's expert software development, cloud infrastructure, media production, and AI solutions. 50+ projects completed, 8+ years experience."
         keywords="software development company, custom software development, AI solutions, cloud infrastructure, media production, web development, mobile app development, digital transformation, technology consulting"
         url="https://cryptdox.com"
         image="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
@@ -172,7 +172,7 @@ const HomePage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                CryptDox specializes in software development, media production, and AI-powered solutions to help your business thrive in the digital age.
+                cryptdox specializes in software development, media production, and AI-powered solutions to help your business thrive in the digital age.
               </motion.p>
               <motion.div 
                 className="flex flex-wrap gap-4"
@@ -419,7 +419,7 @@ const HomePage = () => {
             >
               <img 
                 src="https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="CryptDox Team - Software Development Experts" 
+                alt="cryptdox Team - Software Development Experts" 
                 className="rounded-xl shadow-lg w-full"
                 loading="lazy"
               />
@@ -431,9 +431,9 @@ const HomePage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">About CryptDox</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">About cryptdox</h2>
               <p className="text-lg text-gray-600 mb-6">
-                CryptDox is a technology startup founded by Abir Hosen Ashik, specializing in software development, media production, and AI-powered solutions. Our mission is to help businesses leverage technology to grow and innovate.
+                cryptdox is a technology startup founded by Abir Hosen Ashik, specializing in software development, media production, and AI-powered solutions. Our mission is to help businesses leverage technology to grow and innovate.
               </p>
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">Our Core Values</h3>
@@ -469,7 +469,7 @@ const HomePage = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
             <p className="text-lg text-blue-200 max-w-xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about working with CryptDox.
+              Don't just take our word for it. Here's what our clients have to say about working with cryptdox.
             </p>
           </div>
 
@@ -535,7 +535,7 @@ const HomePage = () => {
                     ))}
                   </div>
                   <h3 className="text-xl font-bold mb-4">TechInnovate Corp</h3>
-                  <p className="text-blue-100 mb-6">"CryptDox transformed our business with their custom software solutions. The team was professional, responsive, and delivered beyond our expectations."</p>
+                  <p className="text-blue-100 mb-6">"cryptdox transformed our business with their custom software solutions. The team was professional, responsive, and delivered beyond our expectations."</p>
                 </motion.div>
 
                 <motion.div 
@@ -559,7 +559,7 @@ const HomePage = () => {
                     ))}
                   </div>
                   <h3 className="text-xl font-bold mb-4">Global Media Productions</h3>
-                  <p className="text-blue-100 mb-6">"Working with CryptDox on our media production needs was a breeze. They delivered high-quality content that aligned perfectly with our brand vision."</p>
+                  <p className="text-blue-100 mb-6">"Working with cryptdox on our media production needs was a breeze. They delivered high-quality content that aligned perfectly with our brand vision."</p>
                 </motion.div>
 
                 <motion.div 
@@ -583,7 +583,7 @@ const HomePage = () => {
                     ))}
                   </div>
                   <h3 className="text-xl font-bold mb-4">AI Innovations Ltd</h3>
-                  <p className="text-blue-100 mb-6">"The AI solutions provided by CryptDox revolutionized our customer service. The chatbot implementation increased our efficiency by 40% and improved customer satisfaction."</p>
+                  <p className="text-blue-100 mb-6">"The AI solutions provided by cryptdox revolutionized our customer service. The chatbot implementation increased our efficiency by 40% and improved customer satisfaction."</p>
                 </motion.div>
               </>
             )}

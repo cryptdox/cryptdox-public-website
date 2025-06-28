@@ -16,7 +16,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "description": data.description,
           "provider": {
             "@type": "Organization",
-            "name": "CryptDox",
+            "name": "cryptdox",
             "url": "https://cryptdox.com"
           },
           "serviceType": data.serviceType || "Technology Service",
@@ -45,11 +45,11 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "url": data.url,
           "brand": {
             "@type": "Brand",
-            "name": "CryptDox"
+            "name": "cryptdox"
           },
           "manufacturer": {
             "@type": "Organization",
-            "name": "CryptDox"
+            "name": "cryptdox"
           },
           "offers": {
             "@type": "Offer",
@@ -58,7 +58,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "availability": "https://schema.org/InStock",
             "seller": {
               "@type": "Organization",
-              "name": "CryptDox"
+              "name": "cryptdox"
             }
           }
         };
@@ -72,11 +72,11 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "image": data.image,
           "author": {
             "@type": "Person",
-            "name": data.author || "CryptDox Team"
+            "name": data.author || "cryptdox Team"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "CryptDox",
+            "name": "cryptdox",
             "logo": {
               "@type": "ImageObject",
               "url": "https://cryptdox.com/logo.png"
@@ -100,7 +100,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "jobTitle": data.jobTitle,
           "worksFor": {
             "@type": "Organization",
-            "name": "CryptDox"
+            "name": "cryptdox"
           },
           "url": data.url,
           "sameAs": data.socialLinks || []
@@ -117,7 +117,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "employmentType": "FULL_TIME",
           "hiringOrganization": {
             "@type": "Organization",
-            "name": "CryptDox",
+            "name": "cryptdox",
             "sameAs": "https://cryptdox.com"
           },
           "jobLocation": {

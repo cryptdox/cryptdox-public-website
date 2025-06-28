@@ -17,28 +17,28 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({
-  title = 'CryptDox - Software Development, Media Production & AI Solutions',
-  description = 'CryptDox specializes in custom software development, cloud infrastructure, media production, and AI-powered solutions. Transform your business with cutting-edge technology.',
+  title = 'cryptdox - Software Development, Media Production & AI Solutions',
+  description = 'cryptdox specializes in custom software development, cloud infrastructure, media production, and AI-powered solutions. Transform your business with cutting-edge technology.',
   keywords = 'software development, web development, mobile apps, cloud infrastructure, AI solutions, media production, custom software, technology consulting, digital transformation',
   image = 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2',
   url = 'https://cryptdox.com',
   type = 'website',
   publishedTime,
   modifiedTime,
-  author = 'CryptDox Team',
+  author = 'cryptdox Team',
   section,
   tags = [],
   noIndex = false,
   canonicalUrl
 }: SEOHeadProps) => {
-  const fullTitle = title.includes('CryptDox') ? title : `${title} | CryptDox`;
+  const fullTitle = title.includes('cryptdox') ? title : `${title} | cryptdox`;
   const currentUrl = canonicalUrl || url;
 
   // Generate structured data
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "CryptDox",
+    "name": "cryptdox",
     "description": "Technology company specializing in software development, media production, and AI solutions",
     "url": "https://cryptdox.com",
     "logo": "https://cryptdox.com/logo.png",
@@ -75,12 +75,12 @@ const SEOHead = ({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "CryptDox",
+    "name": "cryptdox",
     "url": "https://cryptdox.com",
     "description": description,
     "publisher": {
       "@type": "Organization",
-      "name": "CryptDox"
+      "name": "cryptdox"
     },
     "potentialAction": {
       "@type": "SearchAction",
@@ -124,7 +124,7 @@ const SEOHead = ({
       <meta property="og:image" content={image} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:type" content={type} />
-      <meta property="og:site_name" content="CryptDox" />
+      <meta property="og:site_name" content="cryptdox" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}

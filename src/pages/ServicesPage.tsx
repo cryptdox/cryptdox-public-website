@@ -115,7 +115,7 @@ const ServicesPage = () => {
   const displayServices = services.length > 0 ? services : defaultServices;
 
   const servicesData = {
-    name: "CryptDox Technology Services",
+    name: "cryptdox Technology Services",
     description: "Comprehensive technology solutions including software development, cloud infrastructure, media production, and AI solutions",
     services: displayServices
   };
@@ -124,7 +124,7 @@ const ServicesPage = () => {
     <div>
       <SEOHead 
         title="Technology Services - Software Development, Cloud & AI Solutions"
-        description="Explore CryptDox's comprehensive technology services: custom software development, cloud infrastructure, media production, and AI solutions. Transform your business with cutting-edge technology."
+        description="Explore cryptdox's comprehensive technology services: custom software development, cloud infrastructure, media production, and AI solutions. Transform your business with cutting-edge technology."
         keywords="software development services, cloud infrastructure, AI solutions, media production, web development, mobile app development, custom software, technology consulting, digital transformation services"
         url="https://cryptdox.com/services"
         image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
@@ -214,7 +214,7 @@ const ServicesPage = () => {
                       service.name.includes('Media') ? 'https://images.pexels.com/photos/3944374/pexels-photo-3944374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
                       'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                     } 
-                    alt={`${service.name} - Professional Technology Services by CryptDox`}
+                    alt={`${service.name} - Professional Technology Services by cryptdox`}
                     className="rounded-xl shadow-lg w-full"
                     loading="lazy"
                   />

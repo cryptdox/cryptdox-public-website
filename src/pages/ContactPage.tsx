@@ -54,8 +54,8 @@ const ContactPage = () => {
   };
 
   const contactData = {
-    name: "CryptDox Contact",
-    description: "Get in touch with CryptDox for technology solutions and consulting services",
+    name: "cryptdox Contact",
+    description: "Get in touch with cryptdox for technology solutions and consulting services",
     address: "C-8 #54, Green Model Town, Dhaka",
     phone: "+88 01310 685450",
     email: "info@cryptdox.com"
@@ -64,8 +64,8 @@ const ContactPage = () => {
   return (
     <div>
       <SEOHead 
-        title="Contact CryptDox - Get in Touch for Technology Solutions"
-        description="Contact CryptDox for custom software development, AI solutions, cloud infrastructure, and media production services. Get in touch with our expert team today."
+        title="Contact cryptdox - Get in Touch for Technology Solutions"
+        description="Contact cryptdox for custom software development, AI solutions, cloud infrastructure, and media production services. Get in touch with our expert team today."
         keywords="contact cryptdox, software development consultation, technology services contact, get quote, business inquiry, custom software consultation"
         url="https://cryptdox.com/contact"
         image="https://images.pexels.com/photos/1181304/pexels-photo-1181304.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
@@ -246,8 +246,8 @@ const ContactPage = () => {
                 height="450" 
                 style={{ border: 0 }} 
                 loading="lazy"
-                title="CryptDox Office Location - C-8 #54, Green Model Town, Dhaka"
-                aria-label="Map showing CryptDox office location"
+                title="cryptdox Office Location - C-8 #54, Green Model Town, Dhaka"
+                aria-label="Map showing cryptdox office location"
               ></iframe>
             </div>
           </div>
