@@ -602,6 +602,7 @@ const HomePage = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button 
+                  variant="outline"
                   size="lg" 
                   className="bg-white text-blue-600 hover:bg-blue-50"
                 >
