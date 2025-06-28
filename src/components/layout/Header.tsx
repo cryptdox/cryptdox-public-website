@@ -82,11 +82,11 @@ const Header = () => {
             <NavLink to="/" className={navLinkClasses} onClick={closeMenu}>Home</NavLink>
             <NavLink to="/about" className={navLinkClasses} onClick={closeMenu}>About</NavLink>
             <NavLink to="/services" className={navLinkClasses} onClick={closeMenu}>Services</NavLink>
-            <NavLink to="/products" className={navLinkClasses} onClick={closeMenu}>Products</NavLink>
+            {/* <NavLink to="/products" className={navLinkClasses} onClick={closeMenu}>Products</NavLink>
             <NavLink to="/portfolio" className={navLinkClasses} onClick={closeMenu}>Portfolio</NavLink>
             <NavLink to="/team" className={navLinkClasses} onClick={closeMenu}>Team</NavLink>
             <NavLink to="/blog" className={navLinkClasses} onClick={closeMenu}>Blog</NavLink>
-            <NavLink to="/careers" className={navLinkClasses} onClick={closeMenu}>Careers</NavLink>
+            <NavLink to="/careers" className={navLinkClasses} onClick={closeMenu}>Careers</NavLink> */}
             <NavLink to="/contact" className={navLinkClasses} onClick={closeMenu}>Contact</NavLink>
           </nav>
         </div>
