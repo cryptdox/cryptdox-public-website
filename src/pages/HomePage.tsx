@@ -609,7 +609,7 @@ const HomePage = () => {
                   Contact Us Today
                 </Button>
               </Link>
-              <Link to="/portfolio">
+              {/* <Link to="/portfolio">
                 <Button 
                   size="lg" 
                   variant="outline"
@@ -617,7 +617,7 @@ const HomePage = () => {
                 >
                   View Our Portfolio
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
