@@ -115,7 +115,7 @@ const ServicesPage = () => {
   const displayServices = services.length > 0 ? services : defaultServices;
 
   const servicesData = {
-    name: "cryptdox Technology Services",
+    name: "CryptDox Technology Services",
     description: "Comprehensive technology solutions including software development, cloud infrastructure, media production, and AI solutions",
     services: displayServices
   };
@@ -123,8 +123,8 @@ const ServicesPage = () => {
   return (
     <div>
       <SEOHead 
-        title="Technology Services - Software Development, Cloud & AI Solutions"
-        description="Explore cryptdox's comprehensive technology services: custom software development, cloud infrastructure, media production, and AI solutions. Transform your business with cutting-edge technology."
+        title="CryptDox Technology Services - Software Development, Cloud & AI Solutions"
+        description="Explore CryptDox's comprehensive technology services: custom software development, cloud infrastructure, media production, and AI solutions. Transform your business with cutting-edge technology."
         keywords="software development services, cloud infrastructure, AI solutions, media production, web development, mobile app development, custom software, technology consulting, digital transformation services"
         url="https://cryptdox.com/services"
         image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
@@ -214,7 +214,7 @@ const ServicesPage = () => {
                       service.name.includes('Media') ? 'https://images.pexels.com/photos/3944374/pexels-photo-3944374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
                       'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
                     } 
-                    alt={`${service.name} - Professional Technology Services by cryptdox`}
+                    alt={`${service.name} - Professional Technology Services by CryptDox`}
                     className="rounded-xl shadow-lg w-full"
                     loading="lazy"
                   />
@@ -240,7 +240,7 @@ const ServicesPage = () => {
                       'Performance optimization',
                       'Security implementation',
                       'Scalable and future-proof architecture'
-                    ]).map((feature, i) => (
+                    ]).map((feature:any, i:any) => (
                       <li key={i} className="flex items-start">
                         <Check className="h-5 w-5 text-green-500 mt-1 mr-3 flex-shrink-0" />
                         <span className="text-gray-700">{feature}</span>
@@ -271,7 +271,7 @@ const ServicesPage = () => {
             <Link to="/contact">
               <Button 
                 size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50"
+                className="bg-white !text-blue-600 hover:bg-blue-50 hover:!text-white"
               >
                 Contact Us Today
               </Button>

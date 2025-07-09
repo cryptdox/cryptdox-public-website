@@ -16,7 +16,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "description": data.description,
           "provider": {
             "@type": "Organization",
-            "name": "cryptdox",
+            "name": "CryptDox",
             "url": "https://cryptdox.com"
           },
           "serviceType": data.serviceType || "Technology Service",
@@ -45,11 +45,11 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "url": data.url,
           "brand": {
             "@type": "Brand",
-            "name": "cryptdox"
+            "name": "CryptDox"
           },
           "manufacturer": {
             "@type": "Organization",
-            "name": "cryptdox"
+            "name": "CryptDox"
           },
           "offers": {
             "@type": "Offer",
@@ -58,7 +58,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
             "availability": "https://schema.org/InStock",
             "seller": {
               "@type": "Organization",
-              "name": "cryptdox"
+              "name": "CryptDox"
             }
           }
         };
@@ -76,7 +76,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           },
           "publisher": {
             "@type": "Organization",
-            "name": "cryptdox",
+            "name": "CryptDox",
             "logo": {
               "@type": "ImageObject",
               "url": "https://cryptdox.com/logo.png"
@@ -100,7 +100,7 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "jobTitle": data.jobTitle,
           "worksFor": {
             "@type": "Organization",
-            "name": "cryptdox"
+            "name": "CryptDox"
           },
           "url": data.url,
           "sameAs": data.socialLinks || []
@@ -117,8 +117,8 @@ const StructuredData = ({ type, data }: StructuredDataProps) => {
           "employmentType": "FULL_TIME",
           "hiringOrganization": {
             "@type": "Organization",
-            "name": "cryptdox",
-            "sameAs": "https://cryptdox.com"
+            "name": "CryptDox",
+            "sameAs": "https://CryptDox.com"
           },
           "jobLocation": {
             "@type": "Place",

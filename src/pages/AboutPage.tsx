@@ -43,11 +43,11 @@ const AboutPage = () => {
   }, []);
 
   const defaultValues: AboutInfo = {
-    title: 'About cryptdox',
+    title: 'About CryptDox',
     founder_name: 'Abir Hosen Ashik',
     mission: 'To revolutionize digital solutions through innovation, excellence, and integrity.',
-    description: 'cryptdox is a tech startup specializing in software development, media production, and AI-powered solutions. We help businesses leverage technology to grow and innovate in the digital age.',
-    story: 'cryptdox was founded by Abir Hosen Ashik with a vision to create technology solutions that make a difference. The name "cryptdox" combines "Abir" (the founder\'s name) with "Doxology" (an expression of praise), reflecting our commitment to creating praiseworthy digital solutions.',
+    description: 'CryptDox is a tech startup specializing in software development, media production, and AI-powered solutions. We help businesses leverage technology to grow and innovate in the digital age.',
+    story: 'CryptDox was founded by Abir Hosen Ashik with a vision to create technology solutions that make a difference. The name "CryptDox" combines "Abir" (the founder\'s name) with "Doxology" (an expression of praise), reflecting our commitment to creating praiseworthy digital solutions.',
     core_values: ['Innovation', 'Excellence', 'Integrity', 'Collaboration', 'Customer-Focus'],
     // founder_image_url: 'https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     founder_image_url: 'https://scontent.fdac3-1.fna.fbcdn.net/v/t39.30808-6/471507556_2484043331799993_7428727398560408109_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFI3VuhWrTDsoIwiimH28V6EcHtnQYt-7gRwe2dBi37uCtcn8lucNl8mFDGU6053e0ubKchDZBbJ4gxKsROKk2d&_nc_ohc=eNAiiXTCvfIQ7kNvwEtzfCc&_nc_oc=Adk8JCuFxjo769iT5IOnDk9D229BOQKHCejdW7GkZDhvWqd2eo1rrEXxqh6r2P2kNLnzJ_FYP155n1eDn8H9vQkC&_nc_zt=23&_nc_ht=scontent.fdac3-1.fna&_nc_gid=RBPVxyLvpmb5XawR5TisrQ&oh=00_AfMaB_Gb-hZteM5NmxOHJwQIHzECfBqm9sGIZAX0jL3rFA&oe=68659906'
@@ -56,7 +56,7 @@ const AboutPage = () => {
   const info = aboutInfo || defaultValues;
 
   const organizationData = {
-    name: "cryptdox",
+    name: "CryptDox",
     description: info.description,
     founder: info.founder_name,
     mission: info.mission,
@@ -66,9 +66,9 @@ const AboutPage = () => {
   return (
     <div>
       <SEOHead 
-        title="About cryptdox - Leading Software Development Company"
-        description="Learn about cryptdox, a technology company founded by Abir Hosen Ashik, specializing in software development, media production, and AI solutions. Discover our mission, values, and story."
-        keywords="about cryptdox, software development company, abir hosen ashik, technology startup, ai solutions, media production, company history, mission values"
+        title="About CryptDox - Leading Software Development Company"
+        description="Learn about CryptDox, a technology company founded by Abir Hosen Ashik, specializing in software development, media production, and AI solutions. Discover our mission, values, and story."
+        keywords="about CryptDox, software development company, abir hosen ashik, technology startup, ai solutions, media production, company history, mission values"
         url="https://cryptdox.com/about"
         image="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
       />
@@ -167,8 +167,8 @@ const AboutPage = () => {
                 viewport={{ once: true }}
               >
                 <img 
-                  src={isLoading ? 'https://via.placeholder.com/600x400' : (info.founder_image_url || defaultValues.founder_image_url)} 
-                  alt={`${info.founder_name || 'Founder'} - cryptdox Founder and CEO`}
+                  src={isLoading ? 'https://via.placeholder.com/600x400' : (info.founder_image_url || defaultValues.founder_image_url) || ''} 
+                  alt={`${info.founder_name || 'Founder'} - CryptDox Founder and CEO`}
                   className="rounded-xl shadow-lg object-cover w-full aspect-[4/3]"
                   loading="lazy"
                 />
@@ -213,7 +213,7 @@ const AboutPage = () => {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Values</h2>
               <p className="text-xl text-gray-600">
-                These principles guide everything we do at cryptdox
+                These principles guide everything we do at CryptDox
               </p>
             </div>
             
@@ -280,10 +280,10 @@ const AboutPage = () => {
               Let's collaborate to bring your vision to life with innovative technology solutions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contact" className="px-8 py-3 bg-white text-blue-600 font-medium rounded-md hover:bg-blue-50 transition-colors">
+              <Link to="/contact" className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors">
                 Contact Us
               </Link>
-              <Link to="/services" className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white/10 transition-colors">
+              <Link to="/services" className="px-8 py-3 bg-transparent border border-white text-white font-medium rounded-md hover:bg-white hover:text-blue-600 transition-colors">
                 Explore Our Services
               </Link>
             </div>

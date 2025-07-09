@@ -87,7 +87,7 @@ const BlogPage = () => {
   const totalPages = Math.ceil(totalPosts / itemsPerPage);
 
   const blogData = {
-    name: "cryptdox Blog",
+    name: "CryptDox Blog",
     description: "Insights, tutorials, and updates from our technology experts",
     articles: posts.map(post => ({
       title: post.title,
@@ -100,8 +100,8 @@ const BlogPage = () => {
   return (
     <div>
       <SEOHead 
-        title="Blog - Technology Insights & Tutorials | cryptdox"
-        description="Stay updated with the latest insights, tutorials, and industry trends from cryptdox's technology experts. Learn about software development, AI, cloud solutions, and more."
+        title="Blog - Technology Insights & Tutorials | CryptDox"
+        description="Stay updated with the latest insights, tutorials, and industry trends from CryptDox's technology experts. Learn about software development, AI, cloud solutions, and more."
         keywords="technology blog, software development tutorials, AI insights, cloud computing, web development tips, programming tutorials, tech industry news, digital transformation"
         url="https://cryptdox.com/blog"
         image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
@@ -193,7 +193,7 @@ const BlogPage = () => {
                         </div>
                         <div className="flex items-center">
                           <User className="h-4 w-4 mr-2" />
-                          <span>cryptdox Team</span>
+                          <span>CryptDox Team</span>
                         </div>
                       </div>
                       
