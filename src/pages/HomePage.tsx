@@ -152,7 +152,7 @@ const HomePage = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 to-indigo-900 text-white pt-32 pb-16 md:pb-24">
+      <section className="relative bg-gradient-to-br from-blue-900 to-indigo-900 text-white pt-32 pb-16 md:pb-24 mt-[-60px]">
         <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between">

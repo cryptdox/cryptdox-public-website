@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Logo from '../ui/Logo';
 
 const Header = () => {
@@ -35,10 +35,10 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-[60px] transition-all duration-300  ${
         scrolled 
           ? 'bg-white shadow-md py-3' 
-          : 'bg-white/80 backdrop-blur-md py-5'
+          : 'bg-white backdrop-blur-md py-3'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -74,6 +74,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      
 
       {/* Mobile Menu */}
       {isMenuOpen && (

@@ -60,7 +60,7 @@ const SEOHead = ({
       "email": "info@cryptdox.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/cryptdox",
+      "https://www.linkedin.com/company/108141662",
       "https://github.com/cryptdox",
       "https://twitter.com/cryptdox"
     ],

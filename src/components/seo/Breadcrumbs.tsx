@@ -57,7 +57,7 @@ const Breadcrumbs = () => {
         </script>
       </Helmet>
       
-      <nav aria-label="Breadcrumb" className="bg-gray-50 py-3">
+      <nav aria-label="Breadcrumb" className="fixed bg-gray-50 py-3 top-[60px] z-30 left-0 right-0">
         <div className="container mx-auto px-4">
           <ol className="flex items-center space-x-2 text-sm">
             <li>

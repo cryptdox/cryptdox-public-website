@@ -6,7 +6,7 @@ import Breadcrumbs from '../seo/Breadcrumbs';
 
 const PageLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen mt-[60px]">
       <ScrollToTop />
       <Header />
       <Breadcrumbs />
