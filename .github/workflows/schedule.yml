@@ -1,6 +1,7 @@
 name: Call Supabase API on schedule
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/1 * * * *'  # Every 1 minute
 
@@ -10,7 +11,7 @@ jobs:
     steps:
       - name: Call Supabase Edge Function
         run: |
-            curl -X POST https://your-project.supabase.co/functions/v1/your-function-name \
+            curl -X POST 'https://lueinehghohpdorioalj.supabase.co/functions/v1/hyper-action' \
             -H 'Authorization: Bearer ${{ secrets.SUPABASE_ETHOS_AUTH_TOKEN }}'
             -H 'Content-Type: application/json' \
             --data '{"name":"Functions"}'
