@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Cloud, Film, BrainCircuit, Check } from 'lucide-react';
+import { Code, Cloud, Film, BrainCircuit, Check, Smartphone } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
@@ -12,6 +12,7 @@ interface Service {
   id: string;
   name: string;
   description: string | null;
+  lucide_icon?: string;
 }
 
 const ServicesPage = () => {
@@ -23,12 +24,12 @@ const ServicesPage = () => {
       try {
         const { data, error } = await supabase
           .from('services')
-          .select('id, name, description')
+          .select('id, name, description, lucide_icon')
           .eq('is_deleted', false)
           .order('name');
-          
+
         if (error) throw error;
-        
+
         setServices(data || []);
       } catch (err) {
         console.error('Error fetching services:', err);
@@ -36,7 +37,7 @@ const ServicesPage = () => {
         setIsLoading(false);
       }
     };
-    
+
     fetchServices();
   }, []);
 
@@ -92,21 +93,25 @@ const ServicesPage = () => {
   const defaultServices: Service[] = [
     {
       id: '1',
+      lucide_icon: 'Code',
       name: 'Software Development',
       description: 'Custom software solutions designed and developed to meet your specific business needs. We specialize in web applications, mobile apps, and enterprise software.'
     },
     {
       id: '2',
+      lucide_icon: 'Cloud',
       name: 'Cloud & IT Infrastructure',
       description: 'Comprehensive cloud solutions and IT infrastructure services to modernize your technology stack and improve scalability, security, and performance.'
     },
     {
       id: '3',
+      lucide_icon: 'Media',
       name: 'Media Production',
       description: 'Professional media production services including video creation, editing, and brand visuals to help you communicate effectively with your audience.'
     },
     {
       id: '4',
+      lucide_icon: 'BrainCircuit',
       name: 'AI Solutions',
       description: 'Cutting-edge artificial intelligence solutions including natural language processing, machine learning, and automation to drive innovation and efficiency.'
     }
@@ -122,7 +127,7 @@ const ServicesPage = () => {
 
   return (
     <div>
-      <SEOHead 
+      <SEOHead
         title="CryptDox Technology Services - Software Development, Cloud & AI Solutions"
         description="Explore CryptDox's comprehensive technology services: custom software development, cloud infrastructure, media production, and AI solutions. Transform your business with cutting-edge technology."
         keywords="software development services, cloud infrastructure, AI solutions, media production, web development, mobile app development, custom software, technology consulting, digital transformation services"
@@ -130,17 +135,17 @@ const ServicesPage = () => {
         image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200&h=630&dpr=2"
       />
 
-      <StructuredData 
-        type="service" 
+      <StructuredData
+        type="service"
         data={servicesData}
       />
 
-      <PageHeader 
-        title="Our Services" 
-        subtitle="Comprehensive technology solutions for your business" 
+      <PageHeader
+        title="Our Services"
+        subtitle="Comprehensive technology solutions for your business"
         bgImage="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
-      
+
       {/* Services Overview */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -150,7 +155,7 @@ const ServicesPage = () => {
               We offer a comprehensive range of technology services designed to help your business thrive in the digital landscape.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto max-w-5xl">
             {isLoading ? (
               Array(4).fill(0).map((_, i) => (
@@ -164,8 +169,8 @@ const ServicesPage = () => {
               ))
             ) : (
               displayServices.map((service, index) => (
-                <motion.div 
-                  key={service.id} 
+                <motion.div
+                  key={service.id}
                   className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -173,10 +178,12 @@ const ServicesPage = () => {
                   viewport={{ once: true }}
                 >
                   {serviceIcons[service.name]?.icon || (
-                    index === 0 ? <Code className="h-16 w-16 text-blue-600 mb-4" /> :
-                    index === 1 ? <Cloud className="h-16 w-16 text-blue-600 mb-4" /> :
-                    index === 2 ? <Film className="h-16 w-16 text-blue-600 mb-4" /> :
-                    <BrainCircuit className="h-16 w-16 text-blue-600 mb-4" />
+                    service?.lucide_icon?.includes('Code') ? <Code className="h-16 w-16 text-blue-600 mb-4" /> :
+                      service?.lucide_icon?.includes('Cloud') ? <Cloud className="h-16 w-16 text-blue-600 mb-4" /> :
+                        service?.lucide_icon?.includes('Film') ? <Film className="h-16 w-16 text-blue-600 mb-4" /> :
+                          service?.lucide_icon?.includes('Smartphone') ? <Smartphone className="h-16 w-16 text-blue-600 mb-4" /> :
+                            service?.lucide_icon?.includes('BrainCircuit') ? <BrainCircuit className="h-16 w-16 text-blue-600 mb-4" /> :
+                              <Code className="h-16 w-16 text-blue-600 mb-4" />
                   )}
                   <h2 className="text-2xl font-bold mb-4" id={service.name.toLowerCase().replace(/\s+/g, '-')}>
                     {service.name}
@@ -190,36 +197,38 @@ const ServicesPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Detailed Service Sections */}
       {displayServices.map((service, index) => (
-        <section 
-          key={service.id} 
+        <section
+          key={service.id}
           className={`py-16 md:py-24 ${index % 2 === 1 ? 'bg-gray-50' : ''}`}
         >
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}>
-                <motion.div 
+                <motion.div
                   className="md:w-1/2 mb-8 md:mb-0 md:px-8"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <img 
+                  <img
                     src={
-                      service.name.includes('Software') ? 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
-                      service.name.includes('Cloud') ? 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
-                      service.name.includes('Media') ? 'https://images.pexels.com/photos/3944374/pexels-photo-3944374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
-                      'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-                    } 
+                      service?.lucide_icon?.includes('Code') ? 'https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
+                        service?.lucide_icon?.includes('Cloud') ? 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
+                          service?.lucide_icon?.includes('Media') ? 'https://images.pexels.com/photos/3944374/pexels-photo-3944374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
+                            service?.lucide_icon?.includes('BrainCircuit') ? 'https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
+                              service?.lucide_icon?.includes('Smartphone') ? 'https://images.pexels.com/photos/242492/pexels-photo-242492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' :
+                                'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+                    }
                     alt={`${service.name} - Professional Technology Services by CryptDox`}
                     className="rounded-xl shadow-lg w-full"
                     loading="lazy"
                   />
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="md:w-1/2"
                   initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -230,24 +239,65 @@ const ServicesPage = () => {
                   <p className="text-lg text-gray-600 mb-6">
                     {service.description}
                   </p>
-                  
+
                   <h3 className="text-xl font-semibold mb-4">What We Offer:</h3>
                   <ul className="space-y-3 mb-8">
-                    {(serviceIcons[service.name]?.features || [
-                      'Custom solution design and development',
-                      'Integration with existing systems',
-                      'Ongoing support and maintenance',
-                      'Performance optimization',
-                      'Security implementation',
-                      'Scalable and future-proof architecture'
-                    ]).map((feature:any, i:any) => (
-                      <li key={i} className="flex items-start">
-                        <Check className="h-5 w-5 text-green-500 mt-1 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
+                    {(serviceIcons[service.name]?.features ||
+                      service?.lucide_icon?.includes('Code') ? [
+                      'Planning and designing your website',
+                      'Developing interactive features',
+                      'Ensuring responsive design',
+                      'Testing for usability and bugs',
+                      'Optimizing for speed and performance',
+                      'Providing updates and maintenance'
+                    ] :
+                      service?.lucide_icon?.includes('Cloud') ? [
+                        'Helping set up cloud services',
+                        'Moving your data safely to the cloud',
+                        'Keeping your cloud secure',
+                        'Managing costs and resources',
+                        'Making sure your system can grow smoothly',
+                        'Monitoring and quick problem fixing'
+                      ] :
+                        service?.lucide_icon?.includes('Media') ? [
+                          'Creative concept development',
+                          'Scriptwriting and storyboarding',
+                          'Filming and direction support',
+                          'Editing and post-production help',
+                          'Sound and visual effects assistance',
+                          'Project management and delivery'
+                        ] :
+                          service?.lucide_icon?.includes('BrainCircuit') ? [
+                            'Helping understand AI possibilities',
+                            'Setting up language model tools',
+                            'Customizing AI for your needs',
+                            'Improving AI responses and accuracy',
+                            'Integrating AI with your apps',
+                            'Ongoing support and updates'
+                          ] :
+                            service?.lucide_icon?.includes('Smartphone') ? [
+                              'Planning and designing your app',
+                              'Building user-friendly interfaces',
+                              'Developing for iOS and Android',
+                              'Testing to ensure smooth performance',
+                              'Fixing bugs and improving features',
+                              'Updating and maintaining the app'
+                            ] :
+                              [
+                                'Custom solution design and development',
+                                'Integration with existing systems',
+                                'Ongoing support and maintenance',
+                                'Performance optimization',
+                                'Security implementation',
+                                'Scalable and future-proof architecture'
+                              ]).map((feature: any, i: any) => (
+                                <li key={i} className="flex items-start">
+                                  <Check className="h-5 w-5 text-green-500 mt-1 mr-3 flex-shrink-0" />
+                                  <span className="text-gray-700">{feature}</span>
+                                </li>
+                              ))}
                   </ul>
-                  
+
                   <Link to="/contact">
                     <Button>
                       Discuss Your Project
@@ -259,7 +309,7 @@ const ServicesPage = () => {
           </div>
         </section>
       ))}
-      
+
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
         <div className="container mx-auto px-4">
@@ -269,8 +319,8 @@ const ServicesPage = () => {
               Reach out to us today to discuss how we can help with your technology needs.
             </p>
             <Link to="/contact">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white !text-blue-600 hover:bg-blue-50 hover:!text-white"
               >
                 Contact Us Today

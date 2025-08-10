@@ -1,0 +1,15 @@
+name: Call Supabase API on schedule
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Every 1 minute
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Edge Function
+        run: |
+            curl -X POST https://your-project.supabase.co/functions/v1/your-function-name \
+            -H "apikey: ${{ secrets.SUPABASE_API_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
