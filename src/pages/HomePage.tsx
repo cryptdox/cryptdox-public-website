@@ -13,12 +13,12 @@ import { supabase } from '../lib/supabase';
 const HomePage = () => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
   const [services, setServices] = useState<any[]>([]);
-  const [stats, setStats] = useState({
-    projects: 0,
-    experience: 8,
-    clients: 0,
-    teamMembers: 0
-  });
+  // const [stats, setStats] = useState({
+  //   projects: 0,
+  //   experience: 8,
+  //   clients: 0,
+  //   teamMembers: 0
+  // });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -38,8 +38,8 @@ const HomePage = () => {
           .eq('is_deleted', false)
           .limit(6);
 
-        if (testimonialsError) throw testimonialsError;
-        
+          if (testimonialsError) throw testimonialsError;
+          
         // Fetch services
         const { data: servicesData, error: servicesError } = await supabase
           .from('services')
@@ -50,73 +50,73 @@ const HomePage = () => {
         if (servicesError) throw servicesError;
 
         // Fetch projects count (from both individual_projects and projects tables)
-        const { count: individualProjectsCount, error: individualProjectsError } = await supabase
-          .from('individual_projects')
-          .select('id', { count: 'exact' })
-          .eq('is_deleted', false);
+        // const { count: individualProjectsCount, error: individualProjectsError } = await supabase
+        //   .from('individual_projects')
+        //   .select('id', { count: 'exact' })
+        //   .eq('is_deleted', false);
 
-        if (individualProjectsError) throw individualProjectsError;
+        // if (individualProjectsError) throw individualProjectsError;
 
-        const { count: projectsCount, error: projectsError } = await supabase
-          .from('projects')
-          .select('id', { count: 'exact' })
-          .eq('is_deleted', false);
+        // const { count: projectsCount, error: projectsError } = await supabase
+        //   .from('projects')
+        //   .select('id', { count: 'exact' })
+        //   .eq('is_deleted', false);
 
-        if (projectsError) throw projectsError;
+        // if (projectsError) throw projectsError;
 
         // Fetch clients count
-        const { count: clientsCount, error: clientsError } = await supabase
-          .from('clients')
-          .select('id', { count: 'exact' })
-          .eq('is_deleted', false);
+        // const { count: clientsCount, error: clientsError } = await supabase
+        //   .from('clients')
+        //   .select('id', { count: 'exact' })
+        //   .eq('is_deleted', false);
 
-        if (clientsError) throw clientsError;
+        // if (clientsError) throw clientsError;
 
-        // Fetch team members count
-        const { count: teamCount, error: teamError } = await supabase
-          .from('team')
-          .select('id', { count: 'exact' })
-          .eq('is_deleted', false);
+        // // Fetch team members count
+        // const { count: teamCount, error: teamError } = await supabase
+        //   .from('team')
+        //   .select('id', { count: 'exact' })
+        //   .eq('is_deleted', false);
 
-        if (teamError) throw teamError;
+        // if (teamError) throw teamError;
 
-        // Calculate total projects
-        const totalProjects = (individualProjectsCount || 0) + (projectsCount || 0);
+        // // Calculate total projects
+        // const totalProjects = (individualProjectsCount || 0) + (projectsCount || 0);
 
-        // Calculate years of experience (from the earliest created_at in platform_user or a fixed start date)
-        const { data: oldestUser, error: userError } = await supabase
-          .from('platform_user')
-          .select('created_at')
-          .eq('is_deleted', false)
-          .order('created_at', { ascending: true })
-          .limit(1);
+        // // Calculate years of experience (from the earliest created_at in platform_user or a fixed start date)
+        // const { data: oldestUser, error: userError } = await supabase
+        //   .from('platform_user')
+        //   .select('created_at')
+        //   .eq('is_deleted', false)
+        //   .order('created_at', { ascending: true })
+        //   .limit(1);
 
-        let yearsExperience = 8; // Default fallback
-        if (!userError && oldestUser && oldestUser.length > 0) {
-          const startDate = new Date(oldestUser[0].created_at);
-          const currentDate = new Date();
-          const diffTime = Math.abs(currentDate.getTime() - startDate.getTime());
-          const diffYears = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 365));
-          yearsExperience = Math.max(diffYears, 1); // At least 1 year
-        }
+        // let yearsExperience = 8; // Default fallback
+        // if (!userError && oldestUser && oldestUser.length > 0) {
+        //   const startDate = new Date(oldestUser[0].created_at);
+        //   const currentDate = new Date();
+        //   const diffTime = Math.abs(currentDate.getTime() - startDate.getTime());
+        //   const diffYears = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 365));
+        //   yearsExperience = Math.max(diffYears, 1); // At least 1 year
+        // }
         
         setTestimonials(testimonialsData || []);
         setServices(servicesData || []);
-        setStats({
-          projects: Math.max(totalProjects, 50), // Ensure minimum of 50 for display
-          experience: Math.max(yearsExperience, 8), // Ensure minimum of 8 for display
-          clients: Math.max(clientsCount || 0, 30), // Ensure minimum of 30 for display
-          teamMembers: Math.max(teamCount || 0, 15) // Ensure minimum of 15 for display
-        });
+        // setStats({
+        //   projects: Math.max(totalProjects, 50), // Ensure minimum of 50 for display
+        //   experience: Math.max(yearsExperience, 8), // Ensure minimum of 8 for display
+        //   clients: Math.max(clientsCount || 0, 30), // Ensure minimum of 30 for display
+        //   teamMembers: Math.max(teamCount || 0, 15) // Ensure minimum of 15 for display
+        // });
       } catch (error) {
         console.error('Error fetching data:', error);
         // Set fallback values on error
-        setStats({
-          projects: 50,
-          experience: 8,
-          clients: 30,
-          teamMembers: 15
-        });
+        // setStats({
+        //   projects: 50,
+        //   experience: 8,
+        //   clients: 30,
+        //   teamMembers: 15
+        // });
       } finally {
         setIsLoading(false);
       }
@@ -433,7 +433,7 @@ const HomePage = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">About CryptDox</h2>
               <p className="text-lg text-gray-600 mb-6">
-                CryptDox is a technology startup founded by Abir Hosen Ashik, specializing in software development, media production, and AI-powered solutions. Our mission is to help businesses leverage technology to grow and innovate.
+                CryptDox is a technology startup specializing in software development, media production, and AI-powered solutions. Our mission is to help businesses leverage technology to grow and innovate.
               </p>
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">Our Core Values</h3>
