@@ -14,4 +14,4 @@ jobs:
             curl -X POST 'https://lueinehghohpdorioalj.supabase.co/functions/v1/hyper-action' \
             -H 'Authorization: Bearer ${{ secrets.SUPABASE_ETHOS_AUTH_TOKEN }}' \
             -H 'Content-Type: application/json' \
-            --data '{"name":", Keep alive!"}'
+            --data '{"name":"- Stay alive!"}'
