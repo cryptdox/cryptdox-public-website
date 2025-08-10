@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Medal, Lightbulb, CheckCircle, ArrowRight } from 'lucide-react';
+import { Medal, Lightbulb, CheckCircle } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
@@ -80,7 +80,8 @@ const AboutPage = () => {
 
       <PageHeader 
         title="About Us" 
-        subtitle="Our story, mission, and values" 
+        // subtitle="Our story, mission and values" 
+        subtitle="Our mission and values" 
         bgImage="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       />
       
@@ -155,7 +156,7 @@ const AboutPage = () => {
       </section>
       
       {/* Story Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row items-center">
@@ -204,7 +205,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* Values Section */}
       <section className="py-16 md:py-24">
@@ -258,7 +259,7 @@ const AboutPage = () => {
                         {value === 'Collaboration' && (
                           <p className="text-gray-600">We believe in the power of teamwork, fostering an environment where diverse perspectives lead to better outcomes.</p>
                         )}
-                        {value === 'Customer-Focus' && (
+                        {value === 'Client Focus' && (
                           <p className="text-gray-600">We prioritize understanding and addressing our clients' needs, building long-lasting relationships based on mutual success.</p>
                         )}
                       </div>
