@@ -5,7 +5,7 @@ import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import dayjs from 'dayjs';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
@@ -34,9 +34,10 @@ const BlogPage = () => {
       
       // Count total posts for pagination
       const countQuery = supabase
-        .from('blog')
+        .from('org_blogs')
         .select('id', { count: 'exact' })
-        .eq('is_deleted', false);
+        .eq('org_id', ORG_ID)
+        .eq('is_visible', true);
         
       if (search) {
         countQuery.ilike('title', `%${search}%`);
@@ -52,9 +53,10 @@ const BlogPage = () => {
       const end = start + itemsPerPage - 1;
 
       let query = supabase
-        .from('blog')
+        .from('org_blogs')
         .select('*')
-        .eq('is_deleted', false)
+        .eq('org_id', ORG_ID)
+        .eq('is_visible', true)
         .order('created_at', { ascending: false })
         .range(start, end);
 

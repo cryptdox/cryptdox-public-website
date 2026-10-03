@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Calendar, ArrowLeft, Briefcase, Clock, User, Send } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import dayjs from 'dayjs';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
@@ -28,10 +28,11 @@ const JobDetailPage = () => {
       
       try {
         const { data, error } = await supabase
-          .from('job_circular')
+          .from('org_jobs')
           .select('id, title, description, recruitment_expire_date, created_at')
           .eq('id', id)
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
           .single();
           
         if (error) throw error;

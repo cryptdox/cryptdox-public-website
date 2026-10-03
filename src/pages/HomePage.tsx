@@ -8,7 +8,7 @@ import Button from '../components/ui/Button';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 
 const HomePage = () => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
@@ -26,25 +26,25 @@ const HomePage = () => {
       try {
         // Fetch approved testimonials
         const { data: testimonialsData, error: testimonialsError } = await supabase
-          .from('testimonials')
+          .from('org_testimonials')
           .select(`
             id, content, rating,
-            clients (
-              id, organization,
-              platform_user (id, user_id)
-            )
+            org_clients (id, organization)
           `)
-          .eq('approved', true)
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order')
           .limit(6);
 
           if (testimonialsError) throw testimonialsError;
           
         // Fetch services
         const { data: servicesData, error: servicesError } = await supabase
-          .from('services')
+          .from('org_services')
           .select('*')
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order')
           .limit(4);
 
         if (servicesError) throw servicesError;
@@ -508,7 +508,7 @@ const HomePage = () => {
                       </svg>
                     ))}
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{testimonial.clients?.organization || 'Happy Client'}</h3>
+                  <h3 className="text-xl font-bold mb-4">{testimonial.org_clients?.organization || 'Happy Client'}</h3>
                   <p className="text-blue-100 mb-6">"{testimonial.content}"</p>
                 </motion.div>
               ))

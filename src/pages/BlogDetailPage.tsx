@@ -5,7 +5,7 @@ import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import dayjs from 'dayjs';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import ReactQuill from 'react-quill';
@@ -32,10 +32,11 @@ const BlogDetailPage = () => {
 
       try {
         const { data, error } = await supabase
-          .from('blog')
+          .from('org_blogs')
           .select('*')
           .eq('id', id)
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
           .single();
 
         if (error) throw error;

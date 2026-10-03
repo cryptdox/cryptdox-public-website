@@ -5,7 +5,7 @@ import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 
 interface ContactFormData {
   name: string;
@@ -31,9 +31,10 @@ const ContactPage = () => {
     
     try {
       const { error } = await supabase
-        .from('contact')
+        .from('org_contacts')
         .insert([
-          { 
+          {
+            org_id: ORG_ID,
             name: data.name,
             email: data.email,
             message: data.message,

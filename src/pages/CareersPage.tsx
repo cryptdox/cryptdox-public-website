@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight, Briefcase, Users } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import dayjs from 'dayjs';
 
 interface Job {
@@ -25,9 +25,10 @@ const CareersPage = () => {
         const today = new Date().toISOString().split('T')[0];
         
         const { data, error } = await supabase
-          .from('job_circular')
+          .from('org_jobs')
           .select('id, title, description, recruitment_expire_date, created_at')
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
           .gte('recruitment_expire_date', today)
           .order('created_at', { ascending: false });
           

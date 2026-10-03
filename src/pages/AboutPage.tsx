@@ -4,7 +4,7 @@ import { Medal, Lightbulb, CheckCircle } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import { Link } from 'react-router-dom';
 
 interface AboutInfo {
@@ -25,10 +25,10 @@ const AboutPage = () => {
     const fetchAboutInfo = async () => {
       try {
         const { data, error } = await supabase
-          .from('about')
+          .from('org_about')
           .select('title, founder_name, mission, description, story, core_values, founder_image_url')
-          .limit(1)
-          .single();
+          .eq('org_id', ORG_ID)
+          .maybeSingle();
 
         if (error) throw error;
         setAboutInfo(data);

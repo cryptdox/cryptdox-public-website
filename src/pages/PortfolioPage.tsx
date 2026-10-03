@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Code, Cloud, Film, BrainCircuit } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 interface Project {
@@ -23,10 +23,11 @@ const PortfolioPage = () => {
     const fetchProjects = async () => {
       try {
         const { data, error } = await supabase
-          .from('individual_projects')
+          .from('org_projects')
           .select('*')
-          .eq('is_deleted', false)
-          .order('created_at', { ascending: false });
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order');
 
         if (error) throw error;
         setProjects(data || []);

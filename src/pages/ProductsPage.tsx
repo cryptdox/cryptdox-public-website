@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Package, Sparkles, Tag, ArrowUpRight } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 interface Product {
   id: string;
   name: string;
   description: string | null;
-  service_id: string;
-  site_url: string;
-  image_url: string;
-  service_id: string;
-  free: boolean | null;
+  service_id: string | null;
+  site_url: string | null;
+  image_url: string | null;
+  is_free: boolean;
   price: number | null;
+  org_services: { name: string; description: string | null } | null;
 }
 
 const ProductsPage = () => {
@@ -27,16 +27,17 @@ const ProductsPage = () => {
     const fetchProducts = async () => {
       try {
         const { data, error } = await supabase
-          .from('product')
+          .from('org_products')
           .select(`
             *,
-            services (
+            org_services (
               name,
               description
             )
           `)
-          .eq('is_deleted', false)
-          .order('created_at', { ascending: false });
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order');
 
         if (error) throw error;
         setProducts(data || []);
@@ -106,10 +107,10 @@ const ProductsPage = () => {
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center">
                           <span className="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                            {product.services?.name || 'Software'}
+                            {product.org_services?.name || 'Software'}
                           </span>
                         </div>
-                        {product.free ? (
+                        {product.is_free ? (
                           <span className="text-green-600 font-medium">Free</span>
                         ) : (
                           <span className="text-gray-900 font-bold">
@@ -129,7 +130,7 @@ const ProductsPage = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center text-sm text-gray-500">
                           <Tag className="h-4 w-4 mr-2" />
-                          <span>{product.services?.name}</span>
+                          <span>{product.org_services?.name}</span>
                         </div>
                         <Link 
                           to={`/contact?product=${product.name}`}

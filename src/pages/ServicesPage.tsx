@@ -5,14 +5,14 @@ import PageHeader from '../components/ui/PageHeader';
 import SEOHead from '../components/seo/SEOHead';
 import StructuredData from '../components/seo/StructuredData';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import { Link } from 'react-router-dom';
 
 interface Service {
   id: string;
   name: string;
   description: string | null;
-  lucide_icon?: string;
+  lucide_icon?: string | null;
 }
 
 const ServicesPage = () => {
@@ -23,10 +23,11 @@ const ServicesPage = () => {
     const fetchServices = async () => {
       try {
         const { data, error } = await supabase
-          .from('services')
+          .from('org_services')
           .select('id, name, description, lucide_icon')
-          .eq('is_deleted', false)
-          .order('name');
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order');
 
         if (error) throw error;
 

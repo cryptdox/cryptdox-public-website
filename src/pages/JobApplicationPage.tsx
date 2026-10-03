@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { ArrowLeft, Upload, File, X } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import Button from '../components/ui/Button';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID, ORG_BUCKET } from '../lib/supabase';
 import dayjs from 'dayjs';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
@@ -45,10 +45,11 @@ const JobApplicationPage = () => {
       
       try {
         const { data, error } = await supabase
-          .from('job_circular')
+          .from('org_jobs')
           .select('id, title, recruitment_expire_date')
           .eq('id', id)
-          .eq('is_deleted', false)
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
           .single();
           
         if (error) throw error;
@@ -118,31 +119,30 @@ const JobApplicationPage = () => {
       // 1. Upload CV to Supabase Storage
       const fileExt = cvFile.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}.${fileExt}`;
-      const filePath = `cvs/${fileName}`;
+      const filePath = `${ORG_ID}/applications/${fileName}`;
       
       const { error: uploadError } = await supabase.storage
-        .from('applications')
-        .upload(filePath, cvFile);
+        .from(ORG_BUCKET)
+        .upload(filePath, cvFile, { contentType: cvFile.type });
         
       if (uploadError) throw uploadError;
       
       // 2. Get the public URL for the uploaded file
       const { data: { publicUrl } } = supabase.storage
-        .from('applications')
+        .from(ORG_BUCKET)
         .getPublicUrl(filePath);
       
       // 3. Submit application details to database
       const { error: submitError } = await supabase
-        .from('applications')
+        .from('org_job_applications')
         .insert([
           {
+            org_id: ORG_ID,
             job_id: job.id,
             applicant_name: data.applicant_name,
             email: data.email,
             objective: data.objective,
-            cv_url: publicUrl,
-            reviewed: false,
-            approved: false
+            cv_url: publicUrl
           }
         ]);
         

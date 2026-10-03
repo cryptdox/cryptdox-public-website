@@ -1,23 +1,21 @@
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[];
+// Generated from the org_ tables in the Bangla Tools Supabase project
+// (batools/supabase/migrations/030_org_site_tables.sql). Regenerate when they change.
+
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export interface Database {
   public: {
     Tables: {
-      about: {
+      org_about: {
         Row: {
           id: string;
+          org_id: string;
           title: string;
           founder_name: string | null;
           mission: string | null;
           description: string | null;
           story: string | null;
-          core_values: string[] | null;
+          core_values: string[];
           founder_image_url: string | null;
           created_by: string | null;
           updated_by: string | null;
@@ -26,462 +24,773 @@ export interface Database {
         };
         Insert: {
           id?: string;
-          title: string;
-          founder_name?: string | null;
-          mission?: string | null;
-          description?: string | null;
-          story?: string | null;
-          core_values?: string[] | null;
-          founder_image_url?: string | null;
-          created_by?: string | null;
-          updated_by?: string | null;
-          created_at?: string;
-          updated_at?: string;
-        };
-        Update: {
-          id?: string;
+          org_id: string;
           title?: string;
           founder_name?: string | null;
           mission?: string | null;
           description?: string | null;
           story?: string | null;
-          core_values?: string[] | null;
+          core_values?: string[];
           founder_image_url?: string | null;
           created_by?: string | null;
           updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
         };
-      };
-      applications: {
-        Row: {
-          id: string;
-          job_id: string;
-          cv_url: string | null;
-          applicant_name: string;
-          email: string;
-          reviewed: boolean;
-          approved: boolean;
-          objective: string | null;
-          applied_at: string;
-          updated_at: string;
-        };
-        Insert: {
-          id?: string;
-          job_id: string;
-          cv_url?: string | null;
-          applicant_name: string;
-          email: string;
-          reviewed?: boolean;
-          approved?: boolean;
-          objective?: string | null;
-          applied_at?: string;
-          updated_at?: string;
-        };
         Update: {
           id?: string;
-          job_id?: string;
-          cv_url?: string | null;
-          applicant_name?: string;
-          email?: string;
-          reviewed?: boolean;
-          approved?: boolean;
-          objective?: string | null;
-          applied_at?: string;
+          org_id?: string;
+          title?: string;
+          founder_name?: string | null;
+          mission?: string | null;
+          description?: string | null;
+          story?: string | null;
+          core_values?: string[];
+          founder_image_url?: string | null;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
           updated_at?: string;
         };
+        Relationships: [
+        ];
       };
-      blog: {
+      org_blogs: {
         Row: {
           id: string;
-          created_by: string | null;
+          org_id: string;
           title: string;
           content: string | null;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
-          created_by?: string | null;
+          org_id: string;
           title: string;
           content?: string | null;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
-          created_by?: string | null;
+          org_id?: string;
           title?: string;
           content?: string | null;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+        ];
       };
-      clients: {
+      org_clients: {
         Row: {
           id: string;
-          platform_user_id: string;
-          organization: string | null;
-          joined_at: string;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-        Insert: {
-          id?: string;
-          platform_user_id: string;
-          organization?: string | null;
-          joined_at?: string;
-          created_at?: string;
-          updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
-        };
-        Update: {
-          id?: string;
-          platform_user_id?: string;
-          organization?: string | null;
-          joined_at?: string;
-          created_at?: string;
-          updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
-        };
-      };
-      contact: {
-        Row: {
-          id: string;
-          name: string;
-          email: string;
-          message: string;
-          status: string | null;
+          org_id: string;
+          organization: string;
+          joined_at: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
         };
         Insert: {
           id?: string;
-          name: string;
-          email: string;
-          message: string;
-          status?: string | null;
+          org_id: string;
+          organization: string;
+          joined_at?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: {
           id?: string;
+          org_id?: string;
+          organization?: string;
+          joined_at?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+        ];
+      };
+      org_contacts: {
+        Row: {
+          id: string;
+          org_id: string;
+          name: string;
+          email: string;
+          message: string;
+          status: string;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          name: string;
+          email: string;
+          message: string;
+          status?: string;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
           name?: string;
           email?: string;
           message?: string;
-          status?: string | null;
+          status?: string;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [
+        ];
       };
-      faq: {
+      org_faqs: {
         Row: {
           id: string;
-          created_by: string | null;
-          updated_by: string | null;
-          sequence: number | null;
+          org_id: string;
           question: string;
           answer: string;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
-          created_by?: string | null;
-          updated_by?: string | null;
-          sequence?: number | null;
+          org_id: string;
           question: string;
           answer: string;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
-          created_by?: string | null;
-          updated_by?: string | null;
-          sequence?: number | null;
+          org_id?: string;
           question?: string;
           answer?: string;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+        ];
       };
-      individual_education: {
+      org_job_applications: {
         Row: {
           id: string;
-          portfolio_id: string;
+          org_id: string;
+          job_id: string;
+          applicant_name: string;
+          email: string;
+          objective: string | null;
+          cv_url: string | null;
+          is_reviewed: boolean;
+          is_approved: boolean;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          job_id: string;
+          applicant_name: string;
+          email: string;
+          objective?: string | null;
+          cv_url?: string | null;
+          is_reviewed?: boolean;
+          is_approved?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          job_id?: string;
+          applicant_name?: string;
+          email?: string;
+          objective?: string | null;
+          cv_url?: string | null;
+          is_reviewed?: boolean;
+          is_approved?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_job_applications_job_id_fkey'; columns: ['job_id']; isOneToOne: false; referencedRelation: 'org_jobs'; referencedColumns: ['id'] },
+        ];
+      };
+      org_jobs: {
+        Row: {
+          id: string;
+          org_id: string;
+          title: string;
+          description: string | null;
+          recruitment_expire_date: string | null;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          title: string;
+          description?: string | null;
+          recruitment_expire_date?: string | null;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          title?: string;
+          description?: string | null;
+          recruitment_expire_date?: string | null;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+        ];
+      };
+      org_member_education: {
+        Row: {
+          id: string;
+          org_id: string;
+          member_id: string;
           degree: string;
           institution: string;
           start_date: string | null;
           end_date: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
+        Insert: {
+          id?: string;
+          org_id: string;
+          member_id: string;
+          degree: string;
+          institution: string;
+          start_date?: string | null;
+          end_date?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          member_id?: string;
+          degree?: string;
+          institution?: string;
+          start_date?: string | null;
+          end_date?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_member_education_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'org_members'; referencedColumns: ['id'] },
+        ];
       };
-      individual_portfolio: {
+      org_member_experiences: {
         Row: {
           id: string;
-          platform_user_id: string;
-          objective: string | null;
-          profile_image: string | null;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      individual_projects: {
-        Row: {
-          id: string;
-          portfolio_id: string;
-          title: string;
-          technology_used: string[] | null;
-          description: string | null;
-          link: string | null;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      individual_skills: {
-        Row: {
-          id: string;
-          skill_id: string;
-          portfolio_id: string;
-          level: string | null;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      individual_team: {
-        Row: {
-          id: string;
-          team_id: string;
-          portfolio_id: string;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      individual_work_experience: {
-        Row: {
-          id: string;
-          portfolio_id: string;
+          org_id: string;
+          member_id: string;
           company: string;
           position: string;
           start_date: string | null;
           end_date: string | null;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      job_circular: {
-        Row: {
-          id: string;
+          sort_order: number;
+          is_visible: boolean;
           created_by: string | null;
-          title: string;
-          description: string | null;
-          recruitment_expire_date: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
+          org_id: string;
+          member_id: string;
+          company: string;
+          position: string;
+          start_date?: string | null;
+          end_date?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
           created_by?: string | null;
-          title: string;
-          description?: string | null;
-          recruitment_expire_date?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
+          org_id?: string;
+          member_id?: string;
+          company?: string;
+          position?: string;
+          start_date?: string | null;
+          end_date?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
           created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_member_experiences_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'org_members'; referencedColumns: ['id'] },
+        ];
+      };
+      org_member_skills: {
+        Row: {
+          id: string;
+          org_id: string;
+          member_id: string;
+          skill_id: string;
+          level: string | null;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          member_id: string;
+          skill_id: string;
+          level?: string | null;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          member_id?: string;
+          skill_id?: string;
+          level?: string | null;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_member_skills_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'org_members'; referencedColumns: ['id'] },
+          { foreignKeyName: 'org_member_skills_skill_id_fkey'; columns: ['skill_id']; isOneToOne: false; referencedRelation: 'org_skills'; referencedColumns: ['id'] },
+        ];
+      };
+      org_member_teams: {
+        Row: {
+          id: string;
+          org_id: string;
+          member_id: string;
+          team_id: string;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          member_id: string;
+          team_id: string;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          member_id?: string;
+          team_id?: string;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_member_teams_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'org_members'; referencedColumns: ['id'] },
+          { foreignKeyName: 'org_member_teams_team_id_fkey'; columns: ['team_id']; isOneToOne: false; referencedRelation: 'org_teams'; referencedColumns: ['id'] },
+        ];
+      };
+      org_members: {
+        Row: {
+          id: string;
+          org_id: string;
+          name: string;
+          designation: string | null;
+          objective: string | null;
+          profile_image_url: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          name: string;
+          designation?: string | null;
+          objective?: string | null;
+          profile_image_url?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          name?: string;
+          designation?: string | null;
+          objective?: string | null;
+          profile_image_url?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+        ];
+      };
+      org_products: {
+        Row: {
+          id: string;
+          org_id: string;
+          service_id: string | null;
+          name: string;
+          description: string | null;
+          is_free: boolean;
+          price: number | null;
+          image_url: string | null;
+          site_url: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          service_id?: string | null;
+          name: string;
+          description?: string | null;
+          is_free?: boolean;
+          price?: number | null;
+          image_url?: string | null;
+          site_url?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          service_id?: string | null;
+          name?: string;
+          description?: string | null;
+          is_free?: boolean;
+          price?: number | null;
+          image_url?: string | null;
+          site_url?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'org_products_service_id_fkey'; columns: ['service_id']; isOneToOne: false; referencedRelation: 'org_services'; referencedColumns: ['id'] },
+        ];
+      };
+      org_projects: {
+        Row: {
+          id: string;
+          org_id: string;
+          member_id: string | null;
+          title: string;
+          description: string | null;
+          technology_used: string[];
+          link: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          org_id: string;
+          member_id?: string | null;
+          title: string;
+          description?: string | null;
+          technology_used?: string[];
+          link?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          member_id?: string | null;
           title?: string;
           description?: string | null;
-          recruitment_expire_date?: string | null;
+          technology_used?: string[];
+          link?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+          { foreignKeyName: 'org_projects_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'org_members'; referencedColumns: ['id'] },
+        ];
       };
-      platform_role: {
+      org_services: {
         Row: {
           id: string;
-          name: string;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      platform_user: {
-        Row: {
-          id: string;
-          user_id: string;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      platform_user_role: {
-        Row: {
-          id: string;
-          platform_user_id: string;
-          platform_role_id: string;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      product: {
-        Row: {
-          id: string;
+          org_id: string;
           name: string;
           description: string | null;
-          service_id: string;
-          free: boolean | null;
-          price: number | null;
+          lucide_icon: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
-        };
-      };
-      services: {
-        Row: {
-          id: string;
-          name: string;
-          description: string | null;
-          created_at: string;
-          updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
+          org_id: string;
           name: string;
           description?: string | null;
+          lucide_icon?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
+          org_id?: string;
           name?: string;
           description?: string | null;
+          lucide_icon?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+        ];
       };
-      skills: {
+      org_skills: {
         Row: {
           id: string;
+          org_id: string;
           name: string;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
+        Insert: {
+          id?: string;
+          org_id: string;
+          name: string;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          org_id?: string;
+          name?: string;
+          created_by?: string | null;
+          updated_by?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+        ];
       };
-      team: {
+      org_teams: {
         Row: {
           id: string;
+          org_id: string;
           name: string;
           description: string | null;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
+          org_id: string;
           name: string;
           description?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
+          org_id?: string;
           name?: string;
           description?: string | null;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+        ];
       };
-      testimonials: {
+      org_testimonials: {
         Row: {
           id: string;
-          client_id: string;
+          org_id: string;
+          client_id: string | null;
           content: string;
-          rating: number | null;
-          approved: boolean | null;
+          rating: number;
+          sort_order: number;
+          is_visible: boolean;
+          created_by: string | null;
+          updated_by: string | null;
           created_at: string;
           updated_at: string;
-          is_deleted: boolean | null;
-          deleted_at: string | null;
         };
         Insert: {
           id?: string;
-          client_id: string;
+          org_id: string;
+          client_id?: string | null;
           content: string;
-          rating?: number | null;
-          approved?: boolean | null;
+          rating?: number;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
         Update: {
           id?: string;
-          client_id?: string;
+          org_id?: string;
+          client_id?: string | null;
           content?: string;
-          rating?: number | null;
-          approved?: boolean | null;
+          rating?: number;
+          sort_order?: number;
+          is_visible?: boolean;
+          created_by?: string | null;
+          updated_by?: string | null;
           created_at?: string;
           updated_at?: string;
-          is_deleted?: boolean | null;
-          deleted_at?: string | null;
         };
+        Relationships: [
+          { foreignKeyName: 'org_testimonials_client_id_fkey'; columns: ['client_id']; isOneToOne: false; referencedRelation: 'org_clients'; referencedColumns: ['id'] },
+        ];
       };
     };
+    Views: { [_ in never]: never };
+    Functions: { [_ in never]: never };
+    Enums: { [_ in never]: never };
+    CompositeTypes: { [_ in never]: never };
   };
 }

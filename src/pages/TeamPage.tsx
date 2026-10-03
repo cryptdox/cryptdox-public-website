@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
-import { supabase } from '../lib/supabase';
+import { supabase, ORG_ID } from '../lib/supabase';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
 interface TeamMember {
@@ -20,10 +20,11 @@ const TeamPage = () => {
     const fetchTeams = async () => {
       try {
         const { data, error } = await supabase
-          .from('team')
+          .from('org_teams')
           .select('*')
-          .eq('is_deleted', false)
-          .order('name');
+          .eq('org_id', ORG_ID)
+          .eq('is_visible', true)
+          .order('sort_order');
 
         if (error) throw error;
         setTeams(data || []);
